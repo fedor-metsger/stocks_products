@@ -43,8 +43,8 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r requirements.txt
       - name: linter
-        run: flake8 <project_dir> --exclude <project_dir>/migtrations
-      - name: name: Тестирование
+        run: flake8 stocks_products --exclude stocks_products/migtrations
+      - name: Тестирование
         run: ./manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
@@ -62,4 +62,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: expect /home/<user_name>/<project_name>/deploy.exp
+          script: expect /home/fedor/stocks_products/deploy.exp
