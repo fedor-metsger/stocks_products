@@ -16,7 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+@api_view(["GET"])
+def sample_view(request):
+    return Response("CI/CD works!")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('logistic.urls')),
+    path('test/', sample_view, name='test'),
 ]

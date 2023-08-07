@@ -1,3 +1,6 @@
+.env
+.idea/
+__pycache__/
 venv/
 static/
 requests-examples.http
