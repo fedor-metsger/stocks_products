@@ -43,7 +43,7 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r requirements.txt
       - name: linter
-        run: flake8 logistic --exclude logistic/migtrations
+        run: flake8 logistic --exclude logistic/migrations
       - name: Тестирование
         run: ./manage.py test
         env:
