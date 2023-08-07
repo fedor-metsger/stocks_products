@@ -1,11 +1,11 @@
 
 from unittest import TestCase
 
-from rest_framework.api import APIClient
+from rest_framework.test import APIClient, APITestCase
 
 
-class TestSomething(APIClient):
-    def test_sample_view()
+class TestSomething(APITestCase):
+    def test_sample_view(self):
         client = APIClient()
         URL = "/test/"
         response = client.get(URL)
