@@ -9,6 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ['id', 'title', 'description']
 
+
 class ProductPositionSerializer(serializers.ModelSerializer):
     # настройте сериализатор для позиции продукта на складе
     class Meta:
@@ -26,15 +27,20 @@ class ProductPositionSerializer(serializers.ModelSerializer):
         if not value:
             raise serializers.ValidationError("Не указано количество товаров.")
         if value < 1:
-            raise serializers.ValidationError("Количество товаров не может быть меньше одного.")
+            raise serializers.ValidationError(
+                "Количество товаров не может быть меньше одного."
+            )
         return value
 
     def validate_price(self, value):
         if not value:
             raise serializers.ValidationError("Не указана цена товара.")
         if value <= 0:
-            raise serializers.ValidationError("Цена товара должна быть больше ноля.")
+            raise serializers.ValidationError(
+                "Цена товара должна быть больше ноля."
+            )
         return value
+
 
 class StockSerializer(serializers.ModelSerializer):
     positions = ProductPositionSerializer(many=True)
