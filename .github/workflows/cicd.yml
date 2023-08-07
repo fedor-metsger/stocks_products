@@ -4,7 +4,7 @@ name: Django project testing and deployment
 on:
   push:
     branches:
-      - ci_cd
+      - main
 
 jobs:
   django-tests:
