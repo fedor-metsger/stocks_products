@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/<user_name>/<project_name>
+cd /home/fedor/stocks_products
 git pull origin ci_cd
 . venv/bin/activate
 pip install -r requirements.txt

@@ -1,5 +1,5 @@
 #!/bin/bash/expect
 spawn /home/<user_name>/<project_dir>/deploy.sh
 expect "password"
-send --"123456\r"
+send --"Qwer!234\r"
 expect eof
