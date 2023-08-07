@@ -1,5 +1,5 @@
 #!/bin/bash/expect
 spawn /home/fedor/stocks_products/deploy.sh
 expect "password"
-send --"Qwer!234\r"
+send -- "Qwer!234\r"
 expect eof
